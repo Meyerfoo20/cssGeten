@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Geten</title>
+    <link rel="stylesheet" type="text/css" href="grunder.css">
+    <script type="text/javascript" src=""></script>
+
+<style type="text/css">
+    
+    .text {
+      padding: 20px;
+      font-size: 18px;
+      width: 85%;
+      align-items: center;
+      text-align: left;
+    }
+    .text p, h2 {
+      margin: 40px;
+    }
+
+    #container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-left: 50px;
+    width: 80%;
+}
+
+    #menu {
+        background-color: #333;
+        color: #fff;
+        width: 120px;
+        padding: 20px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin-right: 20px;
+    }
+
+    #menu a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 20px;
+    }
+
+    #menu a:hover {
+        text-decoration: underline;
+    }
+
+    #content {
+        flex-grow: 1;
+        padding: 20px;
+        margin-left: 220px; /* Anpassa för att matcha menyns bredd och marginal */
+    }
+
+    #codeHeader {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    #copyButton {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #copyText {
+        margin-right: 5px;
+    }
+
+    #textToCopy {
+        width: 100%;
+        height: 1000vh; /* Justera höjden efter behov */
+        resize: none;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 5px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    #copyButton img {
+        width: 20px;
+        height: 20px;
+    }
+
+</style>
+
+</head>
+<body>
+<center>
+    <nav>
+      <div>
+        <img src="Bilder/logo.png" alt="Logo">
+        <h1>CSS Geten</h1>
+      </div>
+      <div>
+        <a href="index.html">Start</a>
+        <a href="övningar.html">Övningar</a>
+        <a href="facit.html">Facit</a>
+        <a href="bootstrap1.html">Bootsrap1</a>
+      </div>
+    </nav>
+</center>
+
+    <hr id="line">
+
+
+<div id="container">
+    <!-- Meny på vänster sida -->
+    <div id="menu">
+        <h3 style="font-size: 20px;">Bootstrap1</h3>
+        <a href="Uppgift1.html">Uppgift 1</a>
+        <a href="Uppgift2.html">Uppgift 2</a>
+        <a href="Uppgift3.html">Uppgift 3</a>
+        <a href="Uppgift4.html">Uppgift 4</a>
+        <a href="Uppgift5.html">Uppgift 5</a>
+        <a href="Uppgift6.html">Uppgift 6</a>
+        <a href="Uppgift7.html">Uppgift 7</a>
+        <a href="Uppgift8.html">Uppgift 8</a>
+        <a href="Uppgift9.html">Uppgift 9</a>
+        <a href="Uppgift10.html">Uppgift 10</a>
+        <a href="Uppgift11.html">Uppgift 11</a>
+        <a href="Uppgift12.html">Uppgift 12</a>
+        <a href="Uppgift13.html">Uppgift 13</a>
+        <a href="Uppgift14.html">Uppgift 14</a>
+        <a href="Uppgift15.html">Uppgift 15</a>
+    </div>
+
+    <!-- Innehåll och text som ska kopieras -->
+    <div id="content">
+        <div id="codeHeader">
+            <span style="font-weight: bold;">HTML, Uppgift 4</span>
+            <div id="copyButton" onclick="copyText()">
+                <span id="copyText" style="font-size: 14px;">Copy code</span>
+                <img src="copy.png" alt="Copy code">
+            </div>
+        </div>
+        <!-- Texten som ska visas och kopieras -->
+<textarea id="textToCopy" readonly>
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;Bootstrap 4 Example&lt;/title&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="container"&gt;
+
+&lt;div class="row"&gt;
+  &lt;div class="col-sm-12"&gt;
+    
+    &lt;h1&gt;Kolumn 1&lt;/h1&gt;
+
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row" style="margin-top: 20px;"&gt;
+  &lt;div class="col-sm-6"&gt;
+    
+    &lt;h1&gt;Kolumn 2&lt;/h1&gt;
+
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+  &lt;/div&gt;
+
+  &lt;div class="col-sm-6"&gt;
+    
+    &lt;h1&gt;Kolumn 3&lt;/h1&gt;
+
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row" style="margin-top: 20px;"&gt;
+  &lt;div class="col-sm-12"&gt;
+    
+    &lt;h1&gt;Kolumn 4&lt;/h1&gt;
+
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+</textarea>
+    </div>
+</div>
+
+<!-- JavaScript för att kopiera texten när knappen klickas på -->
+<script>
+function copyText() {
+  var textToCopy = document.getElementById("textToCopy").innerText;
+  var tempInput = document.createElement("textarea");
+  tempInput.value = textToCopy;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+}
+</script>
+
+</body>
+</html>

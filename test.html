@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Textkopierare</title>
+<style>
+/* Stil för chattlayout */
+#container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#menu {
+    background-color: #333;
+    color: #fff;
+    width: 200px;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+#menu a:hover {
+    text-decoration: underline;
+}
+
+#content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 220px; /* Anpassa för att matcha menyns bredd och marginal */
+}
+
+#codeHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#copyButton {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#copyText {
+    margin-right: 5px;
+}
+
+#textToCopy {
+    width: 100%;
+    height: 150px; /* Justera höjden efter behov */
+    resize: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+#copyButton img {
+    width: 20px;
+    height: 20px;
+}
+</style>
+</head>
+<body>
+
+<!-- Container för chattlayout -->
+<div id="container">
+    <!-- Meny på vänster sida -->
+    <div id="menu">
+        <a href="#">Hem</a>
+        <a href="#">Om oss</a>
+        <a href="#">Kontakt</a>
+    </div>
+
+    <!-- Innehåll och text som ska kopieras -->
+    <div id="content">
+        <div id="codeHeader">
+            <span style="font-weight: bold;">HTML</span>
+            <div id="copyButton" onclick="copyText()">
+                <span id="copyText" style="font-size: 14px;">Copy code</span>
+                <img src="copy.png" alt="Copy code">
+            </div>
+        </div>
+        <!-- Texten som ska visas och kopieras -->
+        <textarea id="textToCopy" readonly>
+Här är texten som du kan kopiera.
+</textarea>
+    </div>
+</div>
+
+<!-- JavaScript för att kopiera texten när knappen klickas på -->
+<script>
+function copyText() {
+  var textToCopy = document.getElementById("textToCopy").innerText;
+  var tempInput = document.createElement("textarea");
+  tempInput.value = textToCopy;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+}
+</script>
+
+</body>
+</html>
