@@ -1,134 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>CSS Geten</title>
-	<link rel="stylesheet" type="text/css" href="grunder.css">
-	<script type="text/javascript" src=""></script>
-
-<style type="text/css">
-	
-    .content {
-      border: solid black 5px;
-      border-radius: 10px;
-      width: 40%;
-      align-items: center;
-      text-align: left;
-      margin-top: 30px;
-      margin-bottom: 30px;
-    }
-
-    .content h1 {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    img {
-        width: 607.5px;
-        height: auto;
-    }
-
-</style>
-
+  <title>HTML and CSS Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <style type="text/css">
+      .text {
+        padding: 20px;
+        font-size: 18px;
+        width: 85%;
+        align-items: center;
+        text-align: left;
+      }
+      .text p, h2 {
+        margin: 40px;
+      }
+      .navbar a {
+        text-decoration: none;
+        color: white;
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+      .exercise-img {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      .code-section {
+        display: none;
+      }
+  </style>
 </head>
 <body>
-<center>
-    <nav>
-      <div>
-        <img src="Bilder/logo.png" alt="Logo">
-        <h1>CSS Geten</h1>
-      </div>
-      <div>
-        <a href="index.html">Start</a>
-        <a href="övningar.html">Övningar</a>
-        <a href="facit.html">Facit</a>
-        <a href="bootstrap1.html">Bootstrap1</a>
-      </div>
-    </nav>
-</center>
+    <center>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">
+            <img src="Bilder/logo.png" alt="Logo" style="width:40px;">
+            </a>
+            <a href="index.html">Start</a>
+            <a href="övningar.html">Övningar</a>
+            <a href="facit.html">Facit</a>
+            <a href="bootstrap1.html">Bootstrap1</a>
+            <a href="#test">TestLink</a>
+        </nav>
 
-    <hr id="line">
+        <div class="text">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="exercise-section">
+                        <!-- Dynamically generated exercise (RÖR INTE) -->
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<center>
-    <div class="content">
+        <p style="margin-top: 300px;">© 2024 Min Hemsida | Skapad av [CSS Geten]</p>
+    </center>
 
-        <h1>Uppgift 1</h1>
+    <script>
+        const exercises = [
+            { number: 1, imageSrc: "Bilder/1.png", codeSrc: "Facit/1.html" },
+            { number: 2, imageSrc: "Bilder/2.png", codeSrc: "Facit/2.html"},
+            { number: 3, imageSrc: "Bilder/3.png", codeSrc: "Facit/3.html" },
+            { number: 4, imageSrc: "Bilder/4.png", codeSrc: "Facit/4.html"},
+            { number: 5, imageSrc: "Bilder/5.png", codeSrc: "Facit/5.html" },
+            { number: 6, imageSrc: "Bilder/6.png", codeSrc: "Facit/6.html"},
+            { number: 7, imageSrc: "Bilder/7.png", codeSrc: "Facit/7.html" },
+            { number: 8, imageSrc: "Bilder/8.png", codeSrc: "Facit/8.html"},
+        ];
 
-        <img src="Bilder/1.png">
+        function generateExerciseSections() {
+            const exerciseSection = document.getElementById("exercise-section");
+            exercises.forEach(exercise => {
+                const exerciseDiv = document.createElement("div");
+                exerciseDiv.classList.add("col-md-6");
 
-    </div>
-</center>
+                const exerciseTitle = document.createElement("h2");
+                exerciseTitle.textContent = `Uppgift ${exercise.number}`;
 
-<center>
-    <div class="content">
+                const exerciseImage = document.createElement("img");
+                exerciseImage.src = exercise.imageSrc;
+                exerciseImage.classList.add("exercise-img");
+                exerciseImage.alt = `Uppgift ${exercise.number}`;
 
-        <h1>Uppgift 2</h1>
+                const showCodeButton = document.createElement("button");
+                showCodeButton.classList.add("btn", "btn-primary", "show-code-btn");
+                showCodeButton.textContent = "Visa HTML-kod";
+                showCodeButton.dataset.codeSrc = exercise.codeSrc;
 
-        <img src="Bilder/2.png">
+                const codeSection = document.createElement("div");
+                codeSection.classList.add("code-section");
 
-    </div>
-</center>
+                exerciseDiv.appendChild(exerciseTitle);
+                exerciseDiv.appendChild(exerciseImage);
+                exerciseDiv.appendChild(showCodeButton);
+                exerciseDiv.appendChild(codeSection);
 
-<center>
-    <div class="content">
+                exerciseSection.appendChild(exerciseDiv);
+            });
+        }
 
-        <h1>Uppgift 3</h1>
+        function toggleCodeSection() {
+            document.querySelectorAll('.show-code-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const codeSection = this.parentElement.querySelector('.code-section');
+                    const codeSrc = this.dataset.codeSrc;
 
-        <img src="Bilder/3.png">
+                    fetch(codeSrc)
+                        .then(response => response.text())
+                        .then(htmlCode => {
+                            codeSection.textContent = htmlCode;
+                            codeSection.style.display = 'block';
+                        })
+                        .catch(error => console.error('Error fetching HTML code:', error));
+                });
+            });
+        }
 
-    </div>
-</center>
-
-<center>
-    <div class="content">
-
-        <h1>Uppgift 4</h1>
-
-        <img src="Bilder/4.png">
-
-    </div>
-</center>
-
-<center>
-    <div class="content">
-
-        <h1>Uppgift 5</h1>
-
-        <img src="Bilder/5.png">
-
-    </div>
-</center>
-
-<center>
-    <div class="content">
-
-        <h1>Uppgift 6</h1>
-
-        <img src="Bilder/6.png">
-
-    </div>
-</center>
-
-<center>
-    <div class="content">
-
-        <h1>Uppgift 7</h1>
-
-        <img src="Bilder/7.png">
-
-    </div>
-</center>
-
-<center>
-    <div class="content">
-
-        <h1>Uppgift 8</h1>
-
-        <img src="Bilder/8.png">
-
-    </div>
-</center>
-
+        generateExerciseSections();
+        toggleCodeSection();
+    </script>
 </body>
 </html>
