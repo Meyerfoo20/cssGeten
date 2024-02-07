@@ -10,7 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   
   <style type="text/css">
-      .text {
+    .text {
         padding: 20px;
         font-size: 18px;
         width: 85%;
@@ -34,12 +34,19 @@
       }
       .code-section {
         display: none;
+        position: relative;
+      }
+      .copy-code-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
       }
       #exercise-section pre {
         background-color: #f4f4f4;
         border: 1px solid #ddd;
         border-radius: 5px;
         padding: 10px;
+        position: relative;
       }
   </style>
 </head>
@@ -98,15 +105,25 @@
 
                 const showCodeButton = document.createElement("button");
                 showCodeButton.classList.add("btn", "btn-primary", "show-code-btn");
+
+
                 showCodeButton.textContent = "Visa HTML-kod";
                 showCodeButton.dataset.codeSrc = exercise.codeSrc;
 
                 const codeSection = document.createElement("pre");
                 codeSection.classList.add("code-section");
 
+                const copyCodeButton = document.createElement("button");
+                copyCodeButton.classList.add("btn", "btn-success", "copy-code-btn");
+                copyCodeButton.textContent = "Kopiera kod";
+                copyCodeButton.onclick = function() {
+                    copyCode(codeSection);
+                };
+
                 exerciseDiv.appendChild(exerciseTitle);
                 exerciseDiv.appendChild(exerciseImage);
                 exerciseDiv.appendChild(showCodeButton);
+                codeSection.appendChild(copyCodeButton);
                 exerciseDiv.appendChild(codeSection);
 
                 exerciseSection.appendChild(exerciseDiv);
@@ -128,6 +145,15 @@
                         .catch(error => console.error('Error fetching HTML code:', error));
                 });
             });
+        }
+
+        function copyCode(element) {
+            const range = document.createRange();
+            range.selectNode(element);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
         }
 
         generateExerciseSections();
