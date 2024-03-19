@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VandelayBootstrap</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ffffff 60%, #7c13c7);
+      min-height: 100vh;
+    }
+
+    .navbar-brand {
+      color: #333 !important;
+      font-size: xx-large;
+    }
+
+    .navbar {
+      width: 70% !important;
+      border: none !important;
+      background-color: rgb(232, 232, 232);
+      border-radius: 0px 0px 10px 10px;
+    }
+    .active {
+      color: #222 !important;
+      font-weight: bold !important;
+    }
+    .nav-link {
+      border-radius: 0px !important;
+      border: 0px;
+      border: 0px !important;
+      font-size: 22px;
+      color: #555;
+      font-weight: 500;
+      transition: 1s;
+    }
+    .reg:hover {
+      color: #222 !important;
+    }
+    .icon {
+      margin-left: 10px;
+    }
+    .jumbotron {
+      background-image: url('space-jumbo.jpg');
+      background-position: center;
+      border-radius: 10px !important;
+      width: 95%; 
+      color: white; 
+      margin-top: 30px;
+      text-align: left;
+    }
+    .lead {
+      margin-top: 10px;
+      margin-left: 5px;
+    }
+
+    .row {
+      width: 70%;
+      text-align: left;
+    }
+
+    .row h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <center>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">Vandelay</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">about</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link reg" href="media.html">media</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link reg" href="services.html">services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link reg" href="contact.html">contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link reg" href="uppgifter.html">uppgifter</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-md-auto">
+          <li class="nav-item">
+            <a class="nav-link reg" href="#"><i class="fas fa-user-plus icon"></i> Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link reg" href="#"><i class="fas fa-sign-in-alt icon"></i> Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Vandelay Industries</h1>
+        <p class="lead">Listening for alien life</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <h1>About</h1>
+        <p>Since its inception in 1958, Vandelay has accomplished many great scientific and technological feats in air and space. Vandelay technology also has been adapted for many nonaerospace uses by the private sector. Vandelay remains a leading force in scientific research and in stimulating public interest in aerospace exploration, as well as science and technology in general.
+          Perhaps more importantly, our exploration of space has taught us to view Earth, ourselves, and the universe in a new way. While the tremendous technical and scientific accomplishments of Vandelay demonstrate vividly that humans can achieve previously inconceivable feats, we also are humbled by the realization that Earth is just a tiny "blue marble" in the cosmos.</p>
+      </div>
+      <div class="col-sm-6">
+        <h1>News</h1>
+        <p>The crew of space shuttle Endeavour awoke at 5:19 p.m. EST to the song "Also Sprach Zarathustra" by Richard Strauss, played for Mission Specialist Nicholas Patrick, who fondly remembers the music from the 1968 film 2001: A Space Odyssey.
+
+          After wake up, the crew was notified that a focused inspection will not be necessary.
+          
+          Today Endeavour's crew will begin transferring supplies from the shuttle's middeck to the space station, including spacewalking equipment, and then will have the afternoon off. Tonight, spacewalkers Bob Behnken and Patrick will sleep in the Quest airlock as part of the overnight "campout" procedure that helps purge nitrogen from their bloodstreams, preventing decompression sickness once they move out into the vacuum of space. The campout will be repeated the night before each spacewalk.
+          A Mission Management Team news briefing is set for 4:30 p.m. and will air live.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <h1>Work at Vandelay</h1>
+        <p>Based on responses from more than 212,000 federal employees last year, Vandelay's workforce continues to score well and the agency is ranked third among large federal agencies as a best place to work.
+
+          The rankings also reveal that Vandelay ranked second among all federal agencies in the categories of Effective Leadership, Teamwork and Support for Diversity, as well as other areas.</p>
+      </div>
+    </div>
+    <hr style="width: 10%; margin: 20px 0px;">
+    <div class="row">
+      <div class="col-sm-12" style="text-align: center; margin-bottom: 50px;">
+        Copyright © Vandelay Industries 2011
+      </div>
+    </div>
+
+  </center>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

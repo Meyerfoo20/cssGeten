@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VandelayBootstrap</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ffffff 60%, #7c13c7);
+      min-height: 100vh;
+    }
+
+    .navbar-brand {
+      color: #333 !important;
+      font-size: xx-large;
+    }
+
+    .navbar {
+      width: 70% !important;
+      border: none !important;
+      background-color: rgb(232, 232, 232);
+      border-radius: 0px 0px 10px 10px;
+    }
+    .active {
+      color: #222 !important;
+      font-weight: bold !important;
+    }
+    .nav-link {
+      border-radius: 0px !important;
+      border: 0px;
+      border: 0px !important;
+      font-size: 22px;
+      color: #555;
+      font-weight: 500;
+      transition: 1s;
+    }
+    .reg:hover {
+      color: #222 !important;
+    }
+    .icon {
+      margin-left: 10px;
+    }
+    .jumbotron {
+      background-image: url('space-jumbo.jpg');
+      background-position: center;
+      border-radius: 10px !important;
+      width: 95%; 
+      color: white; 
+      margin-top: 30px;
+      text-align: left;
+    }
+    .lead {
+      margin-top: 10px;
+      margin-left: 5px;
+    }
+
+    .row {
+      width: 70%;
+      text-align: left;
+    }
+
+    .row h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .video {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-left: -20px;
+    }
+
+    .textAndVideo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .carousel-item {
+        max-height: 300px;
+        position: relative;
+    }
+
+  </style>
+</head>
+<body>
+  <center>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">Vandelay</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link reg" href="index.html">about</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link reg" href="media.html">media</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="services.html">services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link reg" href="contact.html">contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link reg" href="uppgifter.html">uppgifter</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-md-auto">
+          <li class="nav-item">
+            <a class="nav-link reg" href="#"><i class="fas fa-user-plus icon"></i> Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link reg" href="#"><i class="fas fa-sign-in-alt icon"></i> Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Vandelay Industries</h1>
+        <p class="lead">Listening for alien life</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <h1>Services</h1>
+        <p>Since its inception in 1958, Vandelay delivers fantastic images of space. Perhaps more importantly, our exploration of space has taught us to view Earth, ourselves, and the universe in a new way. While the tremendous technical and scientific accomplishments of Vandelay demonstrate vividly that humans can achieve previously inconceivable feats, we also are humbled by the realization that Earth is just a tiny "blue marble" in the cosmos.</p>
+      </div>
+      <div class="col-sm-6">
+        <h1>Space Images</h1>
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+          
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="1.jpg" alt="Los Angeles">
+              </div>
+              <div class="carousel-item">
+                <img src="2.jpg" alt="Chicago">
+              </div>
+              <div class="carousel-item">
+                <img src="3.jpg" alt="New York">
+              </div>
+            </div>
+          
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          
+          </div>
+      </div>
+    </div>
+   
+    <hr style="width: 10%; margin: 20px 0px;">
+    <div class="row">
+      <div class="col-sm-12" style="text-align: center; margin-bottom: 50px;">
+        Copyright © Vandelay Industries 2011
+      </div>
+    </div>
+
+  </center>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
