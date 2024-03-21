@@ -28,6 +28,33 @@
         margin-right: 15px;
       }
 
+      .question-box {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background-color: gray;
+        border: 1px solid darkgray;
+        padding: 10px;
+        border-radius: 5px;
+        transition: opacity 0.5s ease;
+      }
+      .question-box.hidden {
+          opacity: 0;
+          pointer-events: none;
+      }
+      .question-box p {
+          color: #222;
+          font-weight: bold;
+      }
+      .question-box input[type="text"] {
+          border: 1px solid darkgray;
+          border-radius: 3px;
+      }
+      .question-box button {
+          background-color: lightgray;
+          border-color: gray;
+      }
+
   </style>
 </head>
 <body>
@@ -68,6 +95,26 @@
 
 </center>
 
+<div id="question-box" class="question-box">
+  <i class="fas fa-times close-icon" onclick="closeQuestionBox()"></i>
+  <p>Skriv en review!?</p>
+  <input id="answer" type="text" class="form-control" placeholder="Skriv ditt svar här">
+  <button onclick="sendEmail()" class="btn btn-primary mt-2"><i class="fas fa-paper-plane"></i> Skicka</button>
+</div>
+
+<script>
+  function sendEmail() {
+      var answer = document.getElementById("answer").value;
+      var subject = "Önskad maträtt";
+      var body = "Jag tycker följande om cssGeten: " + answer;
+      window.location.href = "mailto:carlssonneo20@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      document.getElementById("question-box").classList.add("hidden");
+  }
+
+  function closeQuestionBox() {
+      document.getElementById("question-box").classList.add("hidden");
+  }
+</script>
 
 </body>
 </html>
