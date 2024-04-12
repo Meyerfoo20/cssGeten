@@ -65,6 +65,7 @@
     </a>
     <a href="index.html">Start</a>
     <a href="övningar.html">Övningar</a>
+    <a href="template.html">Templates</a>
     <a href="bilder.html">Bilder</a>
  </nav>
 
@@ -105,7 +106,7 @@
 <script>
   function sendEmail() {
       var answer = document.getElementById("answer").value;
-      var subject = "Önskad maträtt";
+      var subject = "CSSGeten";
       var body = "Jag tycker följande om cssGeten: " + answer;
       window.location.href = "mailto:carlssonneo20@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
       document.getElementById("question-box").classList.add("hidden");

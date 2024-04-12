@@ -1,59 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 4 Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <style type="text/css">
-    .text {
-        padding: 20px;
-        font-size: 18px;
-        width: 85%;
-        align-items: center;
-        text-align: left;
-      }
-      .text p, h2 {
-        margin: 40px;
-      }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Viewer</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .template {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .copy-btn {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
       .navbar a {
         text-decoration: none;
         color: white;
         margin-left: 15px;
         margin-right: 15px;
       }
-  </style>
+
+    </style>
 </head>
 <body>
-    <center>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand" href="#">
-            <img src="Bilder/logo.png" alt="Logo" style="width:40px;">
-            </a>
-            <a href="index.html">Start</a>
-            <a href="övningar.html">Övningar</a>
-            <a href="facit.html">Facit</a>
-            <a href="bootstrap1.html">Bootstrap1</a>
-            <a href="#test">TestLink</a>
-        </nav>
 
-        <div class="text">
+  <center>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">
+      <img src="Bilder/logo.png" alt="Logo" style="width:40px;">
+    </a>
+    <a href="index.html">Start</a>
+    <a href="övningar.html">Övningar</a>
+    <a href="template.html">Templates</a>
+    <a href="bilder.html">Bilder</a>
+ </nav>
+
+ </center>
+
+    <div class="container" style="margin: 80px 0px;">
+      <h1>Välkommen till Template delen av denna hemsidan!</h1>
+      <p>Här finns alla mallar du behöver för att bygga en hemsida!</p>
+    </div>
+
+    <div class="container" style="margin: 20px 0px;">
+      <h2>Grund mallar:</h2>
+    </div>
+
+    <div class="template" id="template1">
+      <div class="container">
+        <h2>En rubrik</h2>
+        <p>Text...</p>
+      </div>
+        <button class="copy-btn" onclick="copyCode('template1')">Copy Code</button>
+    </div>
+
+    <div class="template" id="template2">
+        <div class="container-fluid">
+          <h2>Rubrik</h2>
+          <p>Text...Denna kod har en container med full width!</p>
+        </div>
+        <button class="copy-btn" onclick="copyCode('template2')">Copy Code</button>
+    </div>
+
+    <div class="template" id="template3">
+      <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6">
-                <!-- CONTENT HERE -->
-            </div>
-            <div class="col-md-6">
-                <!-- CONTENT HERE -->          
-            </div>
+          <div class="col-md-6">
+            <h2>En rubrik</h2>
+            <p>En container med ett "grid system"...</p>
+          </div>
+          <div class="col-md-6">
+            <h2>En till rubrik</h2>
+            <p>Lite text...</p>
+          </div>
         </div>
-        </div>
+      </div>
+      <button class="copy-btn" onclick="copyCode('template3')">Copy Code</button>
+    </div>
 
-        <p style="margin-top: 300px;">© 2024 Min Hemsida | Skapad av [CSS Geten]</p>
-    </center>
+    <hr style="width: 20%; background-color: black; margin: 50px 40%;">
+
+    <div class="container" style="margin: 20px 0px;">
+      <h2>Navbar mallar:</h2>
+    </div>
+
+    <div class="template" id="template4">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">WebSiteName</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page 3</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <button class="copy-btn" onclick="copyCode('template4')">Copy Code</button>
+    </div>
+
+    <div class="template" id="template5">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">WebSiteName</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Page 1
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Page 1-1</a>
+                  <a class="dropdown-item" href="#">Page 1-2</a>
+                  <a class="dropdown-item" href="#">Page 1-3</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page 3</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <button class="copy-btn" onclick="copyCode('template5')">Copy Code</button>
+    </div>
+
+    <div class="template" id="template6">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">WebSiteName</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown2" aria-controls="navbarNavDropdown2" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown2">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page 2</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <button class="copy-btn" onclick="copyCode('template6')">Copy Code</button>
+    </div>
+
+
+
+    <script>
+        function copyCode(templateId) {
+            var code = document.getElementById(templateId).innerHTML;
+            navigator.clipboard.writeText(code)
+                .then(function() {
+                    alert("Code copied successfully!");
+                })
+                .catch(function() {
+                    alert("Error copying code.");
+                });
+        }
+    </script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
